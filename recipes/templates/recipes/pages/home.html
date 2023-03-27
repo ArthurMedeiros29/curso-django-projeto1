@@ -1,0 +1,14 @@
+{% include 'recipes/partials/head.html' %}
+<body>
+    <header class="main-header-container"> <!--um container grande, que pega a largura inteira-->
+        <div class="main-header container"> <!--um container menor, vai ser fixado por uma largura-->
+            <h1>
+                <a href="/"> <!--um link que aponta pra home-->
+                    <i class="fas fa-address-book"></i> <!--um icone-->
+                    <span>Recipes {{ name }}</span> <!--um texto-->
+                </a>
+            </h1>
+        </div>
+    </header>
+</body>
+</html>
