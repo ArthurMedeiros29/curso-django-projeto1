@@ -35,7 +35,7 @@ class PaginationTest(TestCase):
             page_range=list(range(1, 21)),
             qty_pages=4,
             current_page=3,
-        )
+        )['pagination']
         self.assertEqual([2, 3, 4, 5], pagination)
 
         # Current page = 4 - Qty Page = 2 - Middle Page = 2
