@@ -3,7 +3,7 @@ from recipes.models import Category, Recipe, User
 
 
 class RecipeMixin:
-    def make_category(self, name='Categori'):
+    def make_category(self, name='Category'):
         return Category.objects.create(name=name)
 
     def make_author(
