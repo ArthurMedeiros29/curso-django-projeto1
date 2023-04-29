@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 
 from django.contrib.messages import constants
+from utils.environment import get_env_variable, parse_comma_sep_str_to_list
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,14 @@ SECRET_KEY = 'django-insecure-xl11#if5xm5%b0col9fa57xv+o6z(0wl0*22e2gm)td4mk)q8e
 DEBUG = True
 
 '''ALLOWED_HOSTS = []  # type: ignore'''
-ALLOWED_HOSTS: list[str] = []
+'''ALLOWED_HOSTS: list[str] = []'''
+
+ALLOWED_HOSTS: list[str] = parse_comma_sep_str_to_list(
+    get_env_variable('ALLOWED_HOST')
+)
+CSRF_TRUSTED_ORIGINS: list[str] = parse_comma_sep_str_to_list(
+    get_env_variable('CSRF_TRUSTED_ORIGINS')
+)
 
 
 # Application definition
